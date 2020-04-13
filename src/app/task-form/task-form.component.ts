@@ -6,7 +6,7 @@ import {Todo} from '../app.component';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.scss']
 })
-export class TaskFormComponent implements OnInit {
+export class TaskFormComponent {
 
   newText = '';
 
@@ -24,13 +24,7 @@ export class TaskFormComponent implements OnInit {
     this.newText = '';
   }
 
-  insertSomeText(event) {
-    this.newText = event.target.value;
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  // insertSomeText(event) {
+  //   this.newText = event.target.value;
+  // }
 }

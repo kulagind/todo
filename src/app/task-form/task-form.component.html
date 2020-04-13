@@ -1,6 +1,7 @@
 <div class="task-form-wrapper">
   <div class="task-form">
-    <input (keyup)="insertSomeText($event)" [value]="newText" type="text" placeholder="New task">
+<!--    <input (keyup)="insertSomeText($event)" [value]="newText" type="text" placeholder="New task">-->
+    <input [(ngModel)]="newText" type="text" placeholder="New task">
 
     <button [disabled]="newText === ''" (click)="addNewTask(newText)"
     >Add</button>
