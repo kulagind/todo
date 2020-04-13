@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+$h50px: 50px;
+$h30px: 30px;
+
+body {
+  background-color: #44C7CD;
+
+  button {
+    border-radius: 8px;
+    box-shadow: 1px 0 2px 0 black;
+    border: 1px solid grey;
+    height: $h30px;
+
+    &:hover {
+      background-color: lightgrey;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    &:active {
+      box-shadow: none;
+      ransition: 0.3s;
+    }
+  }
+}
+
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+
+

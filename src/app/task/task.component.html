@@ -1,0 +1,15 @@
+<div class="tasks">
+      <div (click)="toggleComplete()"
+           *ngIf="!todo.isEdited; else taskChanger">
+          <input type="checkbox"
+                 [checked]="todo.isCompleted">
+          <p [ngStyle]="{
+          textDecoration: todo.isCompleted ? 'line-through' : 'none'
+          }">{{todo.text}}</p>
+      </div>
+      <ng-template #taskChanger>
+        <input class="changerInput" type="text" #changeTaskInput [value]="todo.text" (keyup.enter)="changeTask(changeTaskInput.value)" (blur)="changeTask(changeTaskInput.value)">
+       </ng-template>
+      <button class="btnEdit" (click)="editTask()">&#9998;</button>
+      <button class="btnRemove" (click)="removeTask()">&#10006;</button>
+</div>

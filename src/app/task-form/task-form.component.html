@@ -1,0 +1,8 @@
+<div class="task-form-wrapper">
+  <div class="task-form">
+    <input (keyup)="insertSomeText($event)" [value]="newText" type="text" placeholder="New task">
+
+    <button [disabled]="newText === ''" (click)="addNewTask(newText)"
+    >Add</button>
+  </div>
+</div>

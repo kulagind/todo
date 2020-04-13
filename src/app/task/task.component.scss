@@ -1,0 +1,57 @@
+.tasks {
+  margin: 10px 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed black;
+  padding-top: 5px;
+  height: 100%;
+  display: grid;
+  grid-template: 'task btnEdit btnRemove' / 1fr 40px 30px;
+
+  @media screen and (max-width: 576px){
+    margin: 10px 10px;
+  }
+
+    div {
+        grid-area: task;
+        cursor: pointer;
+        display: flex;
+
+          p {
+            line-height: 30px;
+            padding-left: 10px;
+            word-break: break-word;
+            text-wrap: normal;
+          }
+
+          input {
+            height: 30px;
+            cursor: pointer;
+          }
+        }
+
+      .btnEdit {
+        grid-area: btnEdit;
+        margin-right: 10px;
+        cursor: pointer;
+        width: 30px;
+
+      }
+
+      .btnRemove {
+        grid-area: btnRemove;
+        cursor: pointer;
+        width: 30px;
+      }
+
+      &:hover {
+        color: grey;
+        transition: 0.3s;
+     }
+
+  .changerInput {
+    width: 95%;
+  }
+}
+
+
+
