@@ -6,7 +6,8 @@ import {
   Input,
   OnInit,
   Output,
-  ViewChild
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import {Todo} from '../app.component';
 
@@ -19,7 +20,8 @@ export interface TaskChangerInterface {
   selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush // реагирует только на изменение полей с декоратором Input
+  changeDetection: ChangeDetectionStrategy.OnPush, // реагирует только на изменение полей с декоратором Input
+  encapsulation: ViewEncapsulation.None // Делает стили данной компоненты глобальными
 })
 export class TaskComponent implements OnInit {
 
