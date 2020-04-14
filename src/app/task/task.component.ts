@@ -1,4 +1,13 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {Todo} from '../app.component';
 
 export interface TaskChangerInterface {
@@ -9,7 +18,8 @@ export interface TaskChangerInterface {
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush // реагирует только на изменение полей с декоратором Input
 })
 export class TaskComponent implements OnInit {
 
@@ -18,6 +28,7 @@ export class TaskComponent implements OnInit {
   @Output() onTaskRemove: EventEmitter<number> = new EventEmitter<number>();
   @Output() onTaskChange: EventEmitter<TaskChangerInterface> = new EventEmitter<TaskChangerInterface>();
 
+  // ViewChild - ссылка на dom-элемент текущ. компоненты. ContentChild - ссылка на дом элемент другой компоненты.
   @ViewChild('changeTaskInput', {static: false}) inputRef: ElementRef;
 
   toggleComplete() {
