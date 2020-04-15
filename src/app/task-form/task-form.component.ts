@@ -10,8 +10,13 @@ export class TaskFormComponent {
 
   newText = '';
 
+  @Output() onInputChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() onTaskAdd: EventEmitter<Todo> = new EventEmitter<Todo>();
   @ViewChild('inputNewTask', {static: false}) inputRef: ElementRef;
+
+  inputWasChanged() {
+    this.onInputChange.emit(this.newText);
+  }
 
   addNewTask(newTaskText: string): void {
     const task: Todo = {

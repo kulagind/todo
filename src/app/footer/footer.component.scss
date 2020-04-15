@@ -1,5 +1,6 @@
 footer {
   position: sticky;
+  height: auto;
   bottom: 0;
   width: 100%;
   padding-top: 5px;
@@ -7,8 +8,6 @@ footer {
   background-color: lightgray;
   line-height: 20px;
   text-align: center;
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
 
   .after {
     width: 100%;

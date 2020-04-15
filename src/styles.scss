@@ -3,8 +3,13 @@
 $h50px: 50px;
 $h30px: 30px;
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #44C7CD;
+  height: 100%;
 
   button {
     border-radius: 8px;
@@ -20,10 +25,11 @@ body {
 
     &:active {
       box-shadow: none;
-      ransition: 0.3s;
+      transition: 0.3s;
     }
   }
 }
+
 
 * {
   font-family: 'Roboto Condensed', sans-serif;

@@ -1,25 +1,31 @@
-<div class="header-wrapper">
-  <header>
-    <div>
-      <img src="{{angularLogoUrl}}">
+<div class="rootWrapper">
+  <div class="main">
+    <div class="header-wrapper">
+      <header>
+        <div>
+          <img src="{{angularLogoUrl}}">
+        </div>
+        <h1>Todo list</h1>
+      </header>
+      <hr>
     </div>
-    <h1>Todo list</h1>
-  </header>
-  <hr>
+
+    <app-task-form
+      (onTaskAdd)="addNewTask($event)"
+      (onInputChange)="fromInput = $event"
+    ></app-task-form>
+
+    <app-task
+      *ngFor="let todo of todoList | filter:fromInput; let i = index"
+      [todo]="todo"
+      [index]="i"
+      (onTaskRemove)="removeTask($event)"
+      (onTaskChange)="changeTask($event)"
+    ></app-task>
+  </div>
+
+  <app-footer [todoList]="todoList"></app-footer>
 </div>
 
-<app-task-form
-  (onTaskAdd)="addNewTask($event)"
-></app-task-form>
-
-<app-task
-  *ngFor="let todo of todoList; let i = index"
-  [todo]="todo"
-  [index]="i"
-  (onTaskRemove)="removeTask($event)"
-  (onTaskChange)="changeTask($event)"
-></app-task>
-
-<app-footer [todoList]="todoList"></app-footer>
 
 

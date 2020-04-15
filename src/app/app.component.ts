@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
+import {Component, ContentChild, ElementRef, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {TaskChangerInterface} from './task/task.component';
 
 export interface Todo {
@@ -13,6 +13,8 @@ export interface Todo {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  fromInput: string = '';
 
   angularLogoUrl = "https://logodix.com/logo/1964196.png";
 
@@ -31,6 +33,7 @@ export class AppComponent {
 
   addNewTask(newTodo: Todo): void {
     this.todoList.unshift(newTodo);
+    this.fromInput = '';
   }
 
   removeTask(index: number): void {
@@ -40,4 +43,5 @@ export class AppComponent {
   changeTask({index, text}: TaskChangerInterface) {
     this.todoList[index].text = text;
   }
+
 }

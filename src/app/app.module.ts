@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { FooterComponent } from './footer/footer.component';
+import { InversionPercentPipe } from './pipes/inversion-percent.pipe';
+import {FilterPipe} from "./pipes/filter.pipe";
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     TaskComponent,
     TaskFormComponent,
-    FooterComponent
+    FooterComponent,
+    InversionPercentPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

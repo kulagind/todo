@@ -10,11 +10,6 @@ import {
 } from '@angular/core';
 import {Todo} from '../app.component';
 
-interface Percents {
-  percentOfCompletedTasks: number;
-  percentOfUncompletedTasks: number;
-}
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -24,10 +19,9 @@ export class FooterComponent {
 
   @Input() todoList: Array<Todo>;
 
-  countCompletedTasks(): Percents{
+  countCompletedTasks(): number {
     const completedTasksList = this.todoList.filter(todo => todo.isCompleted);
-    const percentOfCompletedTasks = Math.round((completedTasksList.length / this.todoList.length) * 100);
-    const percentOfUncompletedTasks = (100 - Math.round((completedTasksList.length / this.todoList.length) * 100));
-    return {percentOfCompletedTasks, percentOfUncompletedTasks};
+    const completedTasksCount = completedTasksList.length / this.todoList.length;
+    return completedTasksCount;
   }
 }

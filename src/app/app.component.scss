@@ -8,6 +8,7 @@ $h30px: 30px;
   top: 0;
   background-color: #44C7CD;
   z-index: 3;
+  flex: 0 0 auto;
 
   @media screen and (max-width: 576px){
     height: $h30px;
@@ -44,3 +45,5 @@ $h30px: 30px;
     margin: 5px;
   }
 }
+
+
