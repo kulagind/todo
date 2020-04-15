@@ -1,5 +1,5 @@
 .tasks {
-  margin: 0 50px;
+  margin: 0 50px 5px;
   padding-bottom: 3px;
   border-bottom: 1px dashed black;
   padding-top: 5px;
@@ -8,7 +8,7 @@
   grid-template: 'task btnEdit btnRemove' / 1fr 40px 30px;
 
   @media screen and (max-width: 576px){
-    margin: 10px 10px;
+    margin: 0 10px 5px;
   }
 
     div {

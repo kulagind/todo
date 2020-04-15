@@ -1,5 +1,5 @@
 <footer>
-  {{countCompletedTasks() | percent}} completed
+  {{(countCompletedTasks() | percent) ? (countCompletedTasks() | percent) + " completed" : "You don't have tasks"}}
   <div class="after"
         [ngStyle]="{
           left: '-' + (countCompletedTasks() | inversionPercent) + '%'
